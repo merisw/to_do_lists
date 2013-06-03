@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @list.name %>
+</p>
+
+<p>
+  <b>Items:</b>
+  <%= @list.items %>
+</p>
+
+<ul id='To-Do'>
+  <% @list.tasks.each do |task| %>
+    <li>
+      <%= task.name %>, by <%= task.deadline %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New Task', new_list_task_path(@list) %>
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %>
